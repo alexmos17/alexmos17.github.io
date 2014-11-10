@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+
+var w;
+
+function openPopup(url) {
+  w = window.open(url);
+}
+
+function navPopup(url) {
+  w.location = url;
+}
+
+</script>
+</head>
+<body>
+
+<button onclick="openPopup('1.html');">Open same-site popup</button>
+<button onclick="navPopup('http://csreis.github.io/');">Navigate popup cross-site</button>
+
+
+</body>
+</html>

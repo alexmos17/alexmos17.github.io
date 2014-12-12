@@ -1,0 +1,25 @@
+<html>
+<script>
+
+function checkAncestorOrigins() {
+  document.getElementById("ancestors").innerHTML = "ancestorOrigins = " + JSON.stringify(location.ancestorOrigins);
+}
+
+function addFrame() {
+  document.getElementById("frames").innerHTML = "<iframe src='http://alexmos-linux.kir/test.html' width=400></iframe>";
+}
+
+</script>
+
+<body>
+Hello from alexmos17.github.io.<br>
+
+<div id="ancestors"></div><br>
+<div id="frames"></div><br>
+
+<button onclick="checkAncestorOrigins()">Find out location.ancestorOrigins</button>
+<button onclick="addFrame()">Add a frame (alexmos-linux)</button>
+
+</body>
+</html>
+

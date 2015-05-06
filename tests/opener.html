@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <script>
@@ -12,13 +13,19 @@ function navPopup(url) {
   w.location = url;
 }
 
+function messageReceived(event) {
+  document.querySelector("#log").innerHTML += event.data + "<br>";
+}
+
+window.addEventListener("message", messageReceived, false);
+
 </script>
 </head>
 
 <body onload="openPopup('popup.html')">
 This page's onload tries to open a popup, which should be blocked.
-
-<button onclick="openPopup('popup.html');">Open same-site popup</button>
-
+<br>
+<button onclick="openPopup('popup.html');">Open same-site popup</button><br>
+<div id="log"></div>
 </body>
 </html>

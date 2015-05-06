@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+
+var w;
+
+function openPopup(url) {
+  w = window.open(url);
+}
+
+function navPopup(url) {
+  w.location = url;
+}
+
+</script>
+</head>
+
+<body onload="openPopup('popup.html')">
+This page's onload tries to open a popup, which should be blocked.
+
+<button onclick="openPopup('popup.html');">Open same-site popup</button>
+
+</body>
+</html>

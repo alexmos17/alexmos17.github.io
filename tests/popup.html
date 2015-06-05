@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script>
+function checkOpenerURL() {
+  document.querySelector('#log').innerHTML ="'Opener URL: " + window.opener.location.href;
+}
+</script>
+</head>
 <body>
-
+<button onclick="checkOpenerURL()">Check opener URL</button>
 <button onclick="opener.postMessage('from-popup','*');">opener.postMessage</button>
 <button onclick="opener.location.href = 'data:text/html,foo'">Navigate opener</button>
-
+<div id="log"></div>
 </body>
 </html>
 

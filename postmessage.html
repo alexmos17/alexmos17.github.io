@@ -18,6 +18,10 @@ function sendMessageToParent() {
   parent.postMessage("foo", "*");
 }
 
+function sendMessageToOpener() {
+  opener.postMessage("foo - via opener", "*");
+}
+
 function sendMessageToParentParent() {
   parent.parent.postMessage("foo", "*");
 }
@@ -32,6 +36,7 @@ Hello from alexmos17.github.io.<br>
 
 <button onclick="checkAncestorOrigins()">Find out location.ancestorOrigins</button>
 <button onclick="sendMessageToParent()">parent.postMessage</button>
+<button onclick="sendMessageToOpener()">opener.postMessage</button>
 <button onclick="sendMessageToParentParent()">parent.parent.postMessage</button><button onclick="sendMessageToParentParent()">parent.parent.postMessage</button>
 <button onclick="parent.location.href = 'http://www.asdf.com/'">try to set parent.location</button>
 

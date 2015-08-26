@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+var w;
+
+function openPopup(url) {
+  w = window.open(url);
+}
+
+function navPopup(url) {
+  w.location = url;
+}
+
+function messageReceived(event) {
+  document.querySelector("#log").innerHTML += event.data + "<br>";
+}
+
+window.addEventListener("message", messageReceived, false);
+
+</script>
+</head>
+
+<body>
+<br>
+<button onclick="openPopup('popup.html');">Open same-site popup</button><br>
+<button onclick="navPopup('http://www.asdf.com/');">Navigate popup cross-site</button><br>
+<div id="log"></div>
+</body>
+</html>

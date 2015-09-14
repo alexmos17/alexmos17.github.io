@@ -6,8 +6,18 @@ document.onkeydown = function(evt) {
     evt = evt || window.event;
     console.log("Keyboard event captured: " + evt.keyCode);
 };
+
+function log(x) {
+  console.log(x);
+  document.getElementById("log").innerText += x + "\n";
+}
+
 </script>
 First frame<br>
-<input type='text' name='child1-input'>
+<input type='text' name='child1-input' onfocus="log('received focus: child frame <input>')" onblur="log('lost focus: child frame <input>')">
+
+<br>
+<div id="log"></div>
+
 </body>
 </html>

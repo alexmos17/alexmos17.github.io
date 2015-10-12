@@ -12,12 +12,17 @@ function navPopup(url) {
   w.location = url;
 }
 
+function focusPopup() {
+  w.focus();
+}
+
 </script>
 </head>
 <body>
 
 <button onclick="openPopup('1.html', 'foo');">Open same-site popup</button>
 <button onclick="navPopup('http://csreis.github.io/');">Navigate popup cross-site</button>
+<button onclick="focusPopup();">Focus popup</button>
 
 
 </body>

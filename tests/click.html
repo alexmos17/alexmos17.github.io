@@ -10,12 +10,11 @@ document.body.onclick = function() {
 }
 
 </script>
-Main frame: <br>
-<input type='text' name='root-input'><br><br>
+Main frame <br>
 
-  <!-- first frame will be cross-origin if this is loaded via http -->
-  <iframe name="child1" src="https://alexmos17.github.io/tests/click-frame.html"></iframe>
-  <iframe name="child2" src="https://alexmos17.github.io/tests/click-frame.html"></iframe>
+<!-- first frame will be cross-origin if this is loaded via http -->
+<iframe name="child1" src="https://alexmos17.github.io/tests/click-frame.html"></iframe>
+<iframe name="child2" src="https://alexmos17.github.io/tests/click-frame.html"></iframe>
 <br>
 <div id="log"></div>
 </body>

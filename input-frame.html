@@ -15,9 +15,9 @@ function log(x) {
 </script>
 First frame<br>
 <input type='text' name='child-input' onfocus="log('received focus: child frame <input>')" onblur="log('lost focus: child frame <input>')">
-
-<iframe name="grandchild" src="data:text/html,Grandchild frame<br><input type='text' name='grandchild-input' onfocus='console.log(&quot;received focus: grandchild frame <input>&quot;)' onblur='console.log(&quot;lost focus: grandchild frame <input>&quot;)'>"></iframe>
-  
+<!--
+<iframe width=100 height=100 name="grandchild" src="data:text/html,Grandchild frame<br><input type='text' name='grandchild-input' onfocus='console.log(&quot;received focus: grandchild frame <input>&quot;)' onblur='console.log(&quot;lost focus: grandchild frame <input>&quot;)'>"></iframe>
+-->
 <br>
 <div id="log"></div>
 

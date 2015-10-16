@@ -12,6 +12,10 @@ function log(x) {
   document.getElementById("log").innerText += x + "\n";
 }
 
+document.body.onclick = function() {
+  document.getElementById("log").innerText += "Click\n";
+}
+
 </script>
 First frame<br>
 <input type='text' name='child-input' onfocus="log('received focus: child frame <input>')" onblur="log('lost focus: child frame <input>')">

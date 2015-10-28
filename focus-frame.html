@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+document.body.onfocus = function(e) {
+  log("Main frame focused");
+  log("activeElement: " + document.activeElement.tagName);
+};
+
+document.body.onblur = function(e) {
+  log("Main frame blurred");
+  log("activeElement: " + document.activeElement.tagName);
+};
+
+function log(x) {
+  console.log(x);
+  document.getElementById("log").innerText += x + "\n";
+}
+
+document.write("Child frame: " + window.name + "<br>");
+</script>
+
+<input type='text' name='root-input' onfocus="log('received focus: child frame <input>')" onblur="log('lost focus: child frame <input>')">
+<br>
+<div id="log"></div>
+</body>
+</html>

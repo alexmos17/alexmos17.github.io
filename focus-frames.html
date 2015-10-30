@@ -10,13 +10,11 @@ iframe { height: 400px; }
 window.name = "main_frame";
 
 document.body.onfocus = function(e) {
-  log("Main frame focused");
-  log("activeElement: " + document.activeElement.tagName);
+  log("document.body for " + window.name + " focused. activeElement: " + document.activeElement.tagName);
 };
 
 document.body.onblur = function(e) {
-  log("Main frame blurred");
-  log("activeElement: " + document.activeElement.tagName);
+  log("document.body for " + window.name + " blurred. activeElement: " + document.activeElement.tagName);
 };
 
 window.addEventListener("focus", function(event) { 

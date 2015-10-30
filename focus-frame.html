@@ -22,6 +22,9 @@ document.write("Child frame: " + window.name + "<br>");
 
 <input type='text' name='root-input' onfocus="log('received focus: child frame <input>')" onblur="log('lost focus: child frame <input>')">
 <br>
+<button onclick="parent.focus()">window.focus parent</button>
+<button onclick="parent.frames['child1'].focus()">window.focus parent.child1</button><br>
+<button onclick="parent.frames['child2'].focus()">window.focus parent.child2</button><br>
 <div id="log"></div>
 </body>
 </html>

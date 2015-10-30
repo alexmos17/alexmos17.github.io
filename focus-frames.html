@@ -7,6 +7,8 @@ iframe { height: 400px; }
 </head>
 <body>
 <script>
+window.name = "main_frame";
+
 document.body.onfocus = function(e) {
   log("Main frame focused");
   log("activeElement: " + document.activeElement.tagName);
@@ -16,6 +18,14 @@ document.body.onblur = function(e) {
   log("Main frame blurred");
   log("activeElement: " + document.activeElement.tagName);
 };
+
+window.addEventListener("focus", function(event) { 
+  log("window " + window.name + " focused"; }, false);
+}
+
+window.addEventListener("blur", function(event) { 
+  log("window " + window.name + " blurred"; }, false);
+}
 
 function log(x) {
   console.log(x);

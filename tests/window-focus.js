@@ -8,5 +8,5 @@ window.addEventListener("blur", function(event) {
 
 function log(x) {
   console.log(x);
-  document.getElementById("log").innerText += x + "\n";
+  document.getElementById("log").innerHTML += x + "<br>";
 }

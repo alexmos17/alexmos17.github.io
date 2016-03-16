@@ -4,11 +4,19 @@ function chrome() {
   var x = window.open("https://www.google.com/");
   setTimeout(function(){x.location = "chrome://chrome";}, 2000)
 }
+function chrome2() {
+  var x = window.open("http://www.asdf.com/");
+  setTimeout(function(){x.location = "chrome://chrome";}, 2000)
+}
 </script>
 <button onclick="file();">Navigating to "file://"</button>
 <script>
 function file() {
   var x = window.open("https://www.google.com/");
-  setTimeout(function(){x.location = "file:///C:/";}, 2000)
+  setTimeout(function(){x.location = "file:///";}, 2000)
+}
+function file2() {
+  var x = window.open("http://www.asdf.com/");
+  setTimeout(function(){x.location = "file:///";}, 2000)
 }
 </script>

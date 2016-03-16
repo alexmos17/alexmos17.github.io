@@ -1,0 +1,14 @@
+<button onclick="chrome();">Navigating to "chrome://"</button>
+<script>
+function chrome() {
+  var x = window.open("https://www.google.com/");
+  setTimeout(function(){x.location = "chrome://chrome";}, 2000)
+}
+</script>
+<button onclick="file();">Navigating to "file://"</button>
+<script>
+function file() {
+  var x = window.open("https://www.google.com/");
+  setTimeout(function(){x.location = "file:///C:/";}, 2000)
+}
+</script>

@@ -6,7 +6,7 @@ function fullscreenIframe() {
   document.querySelector("iframe").webkitRequestFullscreen();
 }    
 document.addEventListener("webkitfullscreenchange", function(e) { 
-  document.querySelector("div").innerHTML += "Fullscreen change for document, target: " + e.target + " is fullscreen: " + (document.webkitFullscreenElement ? "yes" : "no");
+  document.querySelector("div").innerHTML += "Fullscreen change for document, target: " + e.target + " is fullscreen: " + (document.webkitFullscreenElement ? "yes" : "no") + "<br>";
 });
   
 </script>

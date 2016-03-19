@@ -5,6 +5,10 @@
 function fullscreenIframe() {
   document.querySelector("iframe").webkitRequestFullscreen();
 }    
+document.addEventListener("webkitfullscreenchange", function(e) { 
+  document.querySelector("div").innerHTML += "Fullscreen change for document, target: " + e.target + " is fullscreen: " + (document.webkitFullscreenElement ? "yes" : "no");
+});
+  
 </script>
 </head>
 <body>
@@ -12,5 +16,7 @@ Cross-site frame with an element that can go fullscreen:
 <iframe src="https://alexmos17.github.io/fullscreen-frame.html" allowfullscreen=true></iframe>
 <!--<iframe src="https://developer.mozilla.org/samples/domref/fullscreen.html" allowfullscreen=true></iframe>-->
 <button onclick="fullscreenIframe()">Make iframe fullscreen</button>
+<br clear=all>
+<div id="log"></div>
 </body>
 </html>

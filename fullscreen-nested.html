@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function fullscreenIframe() {
+  document.querySelector("iframe").webkitRequestFullscreen();
+}    
+</script>
+</head>
+<body>
+Cross-site frame with an iframe that can go fullscreen:
+<iframe style="width: 600px; height: 400px;" src="https://alexmos17.github.io/fullscreen.html" allowfullscreen=true></iframe>
+<br clear=all>
+<button onclick="fullscreenIframe()">Make iframe fullscreen</button>
+</body>
+</html>

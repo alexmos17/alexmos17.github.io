@@ -5,6 +5,16 @@
 function fullscreen() {
   document.querySelector("div").webkitRequestFullscreen();
 }
+document.addEventListener("fullscreenchange", function( event ) {
+    if ( document.fullscreenEnabled ) {
+        // The target of the event is always the document,
+        // but it is possible to retrieve the fullscreen element through the API
+        console.log("[frame] Entered fullscreen for element: " + document.fullscreenElement);
+    } else {
+      console.log("[frame] Exited fullscreen");
+    }
+
+});
 </script>
 </head>
 <body>

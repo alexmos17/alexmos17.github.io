@@ -6,7 +6,7 @@ function fullscreen() {
   document.querySelector("div").webkitRequestFullscreen();
 }
 document.addEventListener("webkitfullscreenchange", function(e) {
-  if ( document.webkitFullscreenEnabled ) {
+  if (document.webkitFullscreenElement) {
     console.log("[frame] Entered fullscreen for element: " + document.webkitFullscreenElement + " target: " + e.target + " size: " + window.innerWidth + "x" + window.innerHeight);
   } else {
     console.log("[frame] Exited fullscreen");

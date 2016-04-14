@@ -5,12 +5,12 @@
 function fullscreen() {
   document.querySelector("div").webkitRequestFullscreen();
 }
-document.addEventListener("webkitfullscreenchange", function( event ) {
-    if ( document.fullscreenEnabled ) {
-      console.log("[frame] Entered fullscreen for element: " + document.fullscreenElement);
-    } else {
-      console.log("[frame] Exited fullscreen");
-    }
+document.addEventListener("webkitfullscreenchange", function(e) {
+  if ( document.fullscreenEnabled ) {
+    console.log("[frame] Entered fullscreen for element: " + document.webkitFullscreenElement + " target: " + e.target + " size: " + window.innerWidth + "x" + window.innerHeight);
+  } else {
+    console.log("[frame] Exited fullscreen");
+  }
 });
 </script>
 </head>

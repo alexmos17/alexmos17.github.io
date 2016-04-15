@@ -7,9 +7,9 @@ function fullscreen() {
 }
 document.addEventListener("webkitfullscreenchange", function(e) {
   if (document.webkitFullscreenElement) {
-    console.log("[frame] Entered fullscreen for element: " + document.webkitFullscreenElement + " target: " + e.target + " size: " + window.innerWidth + "x" + window.innerHeight);
+    console.log("[frame] Entered fullscreen for element: " + document.webkitFullscreenElement + " target: " + e.target + " window size: " + window.innerWidth + "x" + window.innerHeight);
   } else {
-    console.log("[frame] Exited fullscreen");
+    console.log("[frame] Exited fullscreen. window size: " + window.innerWidth + "x" + window.innerHeight);
   }
 });
 </script>

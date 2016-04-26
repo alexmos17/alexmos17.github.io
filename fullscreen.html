@@ -3,10 +3,23 @@
 <head>
 <script>
 function fullscreenIframe() {
-  document.querySelector("iframe").webkitRequestFullscreen();
+  var f = document.querySelector("iframe");
+  if (f.webkitRequestFullscreen)
+    f.webkitRequestFullscreen();
+  else if (f.mozRequestFullScreen)
+    f.mozRequestFullScreen();
+  else if (f.msRequestFullscreen)
+    f.msRequestFullscreen();
 }    
 document.addEventListener("webkitfullscreenchange", function(e) { 
-  document.querySelector("div").innerHTML += "Fullscreen change for document, target: " + e.target + " is fullscreen: " + (document.webkitFullscreenElement ? "yes" : "no") + "<br>";
+  var fullscreenElement = null;
+  if (document.webkitFullscreenElement)
+    fullscreenElement = document.webkitFullscreenElement;
+  else if (document.mozFullScreenElement)
+    fullscreenElement = document.mozFullScreenElement;
+  else if (document.msFullscreenElement)
+    fullscreenElement = msFullscreenElement;
+  document.querySelector("div").innerHTML += "Fullscreen change for document, target: " + e.target + " is fullscreen: " + (fullscreenElement ? "yes" : "no") + "<br>";
 });
   
 </script>

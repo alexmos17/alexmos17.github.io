@@ -9,7 +9,7 @@ function eventHandler(e) {
   else if (document.mozFullScreenElement)
     fullscreenElement = document.mozFullScreenElement;
   else if (document.msFullscreenElement)
-    fullscreenElement = msFullscreenElement;
+    fullscreenElement = document.msFullscreenElement;
   if (fullscreenElement) {
     console.log("[frame] Entered fullscreen for element: " + fullscreenElement + " target: " + e.target + " window size: " + window.innerWidth + "x" + window.innerHeight);
   } else {

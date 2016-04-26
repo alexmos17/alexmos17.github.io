@@ -26,7 +26,7 @@ function fullscreen() {
     document.addEventListener("mozfullscreenchange", eventHandler);
   } else if (d.msRequestFullscreen) {
     d.msRequestFullscreen();
-    document.addEventListener("msfullscreenchange", eventHandler);
+    document.addEventListener("MSFullscreenChange", eventHandler);
   }
 }
 

@@ -2,16 +2,34 @@
 <html>
 <head>
 <script>
-function fullscreen() {
-  document.querySelector("div").webkitRequestFullscreen();
-}
-document.addEventListener("webkitfullscreenchange", function(e) {
-  if (document.webkitFullscreenElement) {
-    console.log("[frame] Entered fullscreen for element: " + document.webkitFullscreenElement + " target: " + e.target + " window size: " + window.innerWidth + "x" + window.innerHeight);
+function eventHandler(e) {
+  var fullscreenElement = null;
+  if (document.webkitFullscreenElement)
+    fullscreenElement = document.webkitFullscreenElement;
+  else if (document.mozFullScreenElement)
+    fullscreenElement = document.mozFullScreenElement;
+  else if (document.msFullscreenElement)
+    fullscreenElement = msFullscreenElement;
+  if (fullscreenElement) {
+    console.log("[frame] Entered fullscreen for element: " + fullscreenElement + " target: " + e.target + " window size: " + window.innerWidth + "x" + window.innerHeight);
   } else {
     console.log("[frame] Exited fullscreen. window size: " + window.innerWidth + "x" + window.innerHeight);
   }
-});
+}
+function fullscreen() {
+  var d = document.querySelector("div");
+  if (d.webkitRequestFullscreen) {
+    d.webkitRequestFullscreen();
+    document.addEventListener("webkitfullscreenchange", eventHandler);
+  } else if (d.mozRequestFullScreen) {
+    d.mozRequestFullScreen();
+    document.addEventListener("mozfullscreenchange", eventHandler);
+  } else if (d.msRequestFullscreen) {
+    d.msRequestFullscreen();
+    document.addEventListener("msfullscreenchange", eventHandler);
+  }
+}
+
 </script>
 </head>
 <body>

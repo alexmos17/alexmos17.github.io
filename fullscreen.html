@@ -19,7 +19,9 @@ document.addEventListener("webkitfullscreenchange", function(e) {
     fullscreenElement = document.mozFullScreenElement;
   else if (document.msFullscreenElement)
     fullscreenElement = msFullscreenElement;
-  document.querySelector("div").innerHTML += "Fullscreen change for document, target: " + e.target + " is fullscreen: " + (fullscreenElement ? "yes" : "no") + "<br>";
+  var str = "[" + location.href + "] Fullscreen change for document, target: " + e.target + " is fullscreen: " + (fullscreenElement ? "yes" : "no") + "<br>";
+  document.querySelector("div").innerHTML += str;
+  console.log(str);
 });
   
 </script>

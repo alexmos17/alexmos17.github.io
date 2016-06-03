@@ -30,10 +30,20 @@ function fullscreen() {
   }
 }
 
+function exitFullscreen() {
+  if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.mozExitFullScreen) {
+    document.mozExitFullScreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
+
 </script>
 </head>
 <body>
 <button onclick="fullscreen()">Go fullscreen</button>
-<div style="border:1px solid black; font-size: 15pt;">This Div will go fullscreen!</div>
+<div style="border:1px solid black; font-size: 15pt; font-color: green;">This Div will go fullscreen! <a href="#" onclick="exitFullscreen();">exit</a></div>
 </body>
 </html>

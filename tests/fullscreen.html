@@ -21,7 +21,7 @@ document.addEventListener("webkitfullscreenchange", function(e) {
     fullscreenElement = document.mozFullScreenElement;
   else if (document.msFullscreenElement)
     fullscreenElement = msFullscreenElement;
-  var str = "[" + location.href + "] fullscreenchange. target: " + e.target + " is fullscreen: " + (fullscreenElement ? "yes" : "no") + "<br>";
+  var str = "[top] fullscreenchange. target: " + e.target + " is fullscreen: " + (fullscreenElement ? "yes" : "no") + "<br>";
   console.log(str);
 });
   

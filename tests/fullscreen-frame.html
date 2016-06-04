@@ -1,14 +1,54 @@
 <!doctype html>
 <html>
 <head>
+<style>
+  .fs { border:1px solid black; font-size: 20pt; color: green; }
+</style>
 <script>
+
+function eventHandler(e) {
+  var fullscreenElement = null;
+  if (document.webkitFullscreenElement)
+    fullscreenElement = document.webkitFullscreenElement;
+  else if (document.mozFullScreenElement)
+    fullscreenElement = document.mozFullScreenElement;
+  else if (document.msFullscreenElement)
+    fullscreenElement = document.msFullscreenElement;
+  if (fullscreenElement) {
+    console.log("[frame] Entered fullscreen for element: " + fullscreenElement + " target: " + e.target + " window size: " + window.innerWidth + "x" + window.innerHeight);
+  } else {
+    console.log("[frame] Exited fullscreen. window size: " + window.innerWidth + "x" + window.innerHeight);
+  }
+}
+
 function fullscreen() {
-  document.querySelector("div").webkitRequestFullscreen();
+  var d = document.querySelector("div");
+  if (d.webkitRequestFullscreen) {
+    d.webkitRequestFullscreen();
+    document.addEventListener("webkitfullscreenchange", eventHandler);
+  } else if (d.mozRequestFullScreen) {
+    d.mozRequestFullScreen();
+    document.addEventListener("mozfullscreenchange", eventHandler);
+  } else if (d.msRequestFullscreen) {
+    d.msRequestFullscreen();
+    document.addEventListener("MSFullscreenChange", eventHandler);
+  }
+}
+
+function exitFullscreen() {
+  if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.mozCancelFullScreen()) {
+    document.mozCancelFullScreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
 }
 </script>
 </head>
-<body>
-<button onclick="fullscreen()">Go fullscreen</button>
-<div style="border:1px solid black; font-size: 15pt;">This Div will go fullscreen!</div>
+
+<body style="background-color: #ddd;">
+  <button onclick="fullscreen()">Enter fullscreen for DIV</button>
+  <div class="fs">This DIV will go fullscreen. <a href="#" onclick="exitFullscreen();">exit</a></div>
 </body>
 </html>

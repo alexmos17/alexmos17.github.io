@@ -2,6 +2,7 @@
 <html>
 <head>
 <script>
+
 function fullscreenElement(selector) {
   var e = document.querySelector(selector);
   if (e.webkitRequestFullscreen)
@@ -10,7 +11,8 @@ function fullscreenElement(selector) {
     e.mozRequestFullScreen();
   else if (e.msRequestFullscreen)
     e.msRequestFullscreen();
-}    
+}
+
 document.addEventListener("webkitfullscreenchange", function(e) { 
   var fullscreenElement = null;
   if (document.webkitFullscreenElement)

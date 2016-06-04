@@ -1,7 +1,36 @@
 <!doctype html>
 <html>
+<head>
+<script>
+function fullscreenElement(selector) {
+  var e = document.querySelector(selector);
+  if (e.webkitRequestFullscreen)
+    e.webkitRequestFullscreen();
+  else if (e.mozRequestFullScreen)
+    e.mozRequestFullScreen();
+  else if (e.msRequestFullscreen)
+    e.msRequestFullscreen();
+}    
+document.addEventListener("webkitfullscreenchange", function(e) { 
+  var fullscreenElement = null;
+  if (document.webkitFullscreenElement)
+    fullscreenElement = document.webkitFullscreenElement;
+  else if (document.mozFullScreenElement)
+    fullscreenElement = document.mozFullScreenElement;
+  else if (document.msFullscreenElement)
+    fullscreenElement = msFullscreenElement;
+  var str = "[" + location.href + "] fullscreenchange. target: " + e.target + " is fullscreen: " + (fullscreenElement ? "yes" : "no") + "<br>";
+  document.querySelector("div").appendChild(document.createTextNode(str));
+  console.log(str);
+});
+  
+</script>
+</head>
 <body>
 Cross-site frame with an element that can go fullscreen:
-<iframe src="https://alexmos17.github.io/tests/fullscreen-frame.html" allowfullscreen=true></iframe>
+<iframe src="https://alexmos17.github.io/tests/fullscreen-frame.html" allowfullscreen></iframe><br>
+<button onclick="fullscreenElement('iframe')">Make iframe fullscreen</button>
+<br clear=all>
+<div id="log"></div>
 </body>
 </html>

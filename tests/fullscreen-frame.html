@@ -38,7 +38,7 @@ function fullscreen() {
 function exitFullscreen() {
   if (document.webkitExitFullscreen) {
     document.webkitExitFullscreen();
-  } else if (document.mozCancelFullScreen()) {
+  } else if (document.mozCancelFullScreen) {
     document.mozCancelFullScreen();
   } else if (document.msExitFullscreen) {
     document.msExitFullscreen();

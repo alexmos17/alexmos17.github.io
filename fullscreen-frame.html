@@ -33,8 +33,8 @@ function fullscreen() {
 function exitFullscreen() {
   if (document.webkitExitFullscreen) {
     document.webkitExitFullscreen();
-  } else if (document.mozExitFullScreen) {
-    document.mozExitFullScreen();
+  } else if (document.mozCancelFullScreen()) {
+    document.mozCancelFullScreen();
   } else if (document.msExitFullscreen) {
     document.msExitFullscreen();
   }

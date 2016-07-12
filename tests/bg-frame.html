@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function changeBackground() {
+  document.querySelector("iframe").style.backgroundColor="green";
+}
+
+function changeWidth() {
+  document.querySelector("iframe").style.width="600px";
+}
+
+</script>
+</head>
+<body>
+  <!-- frame will be cross-origin if this is loaded via http -->
+  <iframe width=500 height=300 src="https://alexmos17.github.io/1.html" name="iframe with incorrect background"></iframe>
+  <button onclick="changeBackground()">Change background</button>
+  <button onclick="changeWidth()">Change width</button>
+</body>
+</html>

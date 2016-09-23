@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function log(x) {
+  console.log(x);
+  document.getElementById("log").innerText += x + "\n";
+}
+
+document.body.onclick = function() {
+  document.getElementById("log").innerText += "Click\n";
+}
+document.body.onmousedown = function() {
+  document.getElementById("log").innerText += "MouseDown\n";
+  window.open("data:text/html,Frame popup from onmousedown");
+}
+document.body.onmouseup = function() {
+  document.getElementById("log").innerText += "MouseUp\n";
+  window.open("data:text/html,Frame popup from onmouseup");
+}
+</script>
+
+<p>Child frame</p>
+
+<div id="log"></div>
+</body>
+</html>

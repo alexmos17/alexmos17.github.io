@@ -12,10 +12,11 @@ document.body.onclick = function() {
 }
 document.body.onmousedown = function() {
   document.getElementById("log").innerText += "MouseDown\n";
-  window.open("data:text/html,Foo");
+  window.open("data:text/html,Popup from onmousedown");
 }
 document.body.onmouseup = function() {
   document.getElementById("log").innerText += "MouseUp\n";
+  window.open("data:text/html,Popup from onmouseup");
 }
 </script>
 

@@ -16,6 +16,14 @@ document.body.onclick = function() {
   document.getElementById("log").innerText += "Click\n";
 }
 
+document.body.onmousedown = function() {
+  document.getElementById("log").innerText += "MouseDown\n";
+}
+
+document.body.onmouseup = function() {
+  document.getElementById("log").innerText += "MouseUp\n";
+}
+
 </script>
 Main frame<br>
 <input type='text' name='root-input' onfocus="log('received focus: main frame <input>')" onblur="log('lost focus: main frame <input>')">

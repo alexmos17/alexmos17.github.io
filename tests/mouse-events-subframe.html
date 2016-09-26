@@ -7,15 +7,15 @@ function log(x) {
   document.getElementById("log").innerText += x + "\n";
 }
   
-document.body.addEventListener('click', function() {
+window.addEventListener('click', function() {
   document.getElementById("log").innerText += "Click\n";
 }, false);
 
-document.body.addEventListener('mousedown', function() {
+window.addEventListener('mousedown', function() {
   document.getElementById("log").innerText += "MouseDown\n";
 }, false);
 
-document.body.addEventListener('mouseup', function() {
+window.addEventListener('mouseup', function() {
   document.getElementById("log").innerText += "MouseUp\n";
 }, false);
   

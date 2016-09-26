@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
 <body>
+  
+Main frame<br>
+
+<div style='border: 1px solid black; padding: 5px;'>Click here</div>
+  
 <script>
 function log(x) {
   console.log(x);
   document.getElementById("log").innerText += x + "\n";
 }
-  
-window.addEventListener('click', function() {
+var div = document.querySelector('div');  
+div.addEventListener('click', function() {
   document.getElementById("log").innerText += "Click\n";
 }, false);
 
-window.addEventListener('mousedown', function() {
+div.addEventListener('mousedown', function() {
   document.getElementById("log").innerText += "MouseDown\n";
 }, false);
 
-window.addEventListener('mouseup', function() {
+div.addEventListener('mouseup', function() {
   document.getElementById("log").innerText += "MouseUp\n";
 }, false);
   
 </script>
 
-Main frame<br>
 
 <!-- child frames will be cross-origin if this page is loaded via http -->
-<iframe name="child1" src="https://alexmos17.github.io/tests/mouse-events-subframe.html"></iframe>
-<iframe name="child2" src="https://alexmos17.github.io/tests/mouse-events-subframe.html"></iframe>
+<iframe height="600" name="child1" src="https://alexmos17.github.io/tests/mouse-events-subframe.html"></iframe>
+<iframe height="600" name="child2" src="https://alexmos17.github.io/tests/mouse-events-subframe.html"></iframe>
 
 <br clear=all>
 <div id="log"></div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function log(x) {
+  console.log(x);
+  document.getElementById("log").innerText += x + "\n";
+}
+document.body.onclick = function() {
+  document.getElementById("log").innerText += "Click\n";
+}
+document.body.onmousedown = function() {
+  document.getElementById("log").innerText += "MouseDown\n";
+}
+document.body.onmouseup = function() {
+  document.getElementById("log").innerText += "MouseUp\n";
+}
+</script>
+
+Child frame<br>
+
+<br clear=all>
+<div id="log"></div>
+</body>
+</html>

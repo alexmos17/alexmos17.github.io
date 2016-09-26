@@ -7,7 +7,7 @@ function log(x) {
   document.getElementById("log").innerText += x + "\n";
 }
   
-document.body.addEventListened('click', function() {
+document.body.addEventListener('click', function() {
   document.getElementById("log").innerText += "Click\n";
 }, false);
 

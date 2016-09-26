@@ -6,15 +6,19 @@ function log(x) {
   console.log(x);
   document.getElementById("log").innerText += x + "\n";
 }
-document.body.onclick = function() {
+  
+document.body.addEventListener('click', function() {
   document.getElementById("log").innerText += "Click\n";
-}
-document.body.onmousedown = function() {
+}, false);
+
+document.body.addEventListener('mousedown', function() {
   document.getElementById("log").innerText += "MouseDown\n";
-}
-document.body.onmouseup = function() {
+}, false);
+
+document.body.addEventListener('mouseup', function() {
   document.getElementById("log").innerText += "MouseUp\n";
-}
+}, false);
+  
 </script>
 
 Child frame<br>

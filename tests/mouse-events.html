@@ -4,23 +4,20 @@
   
 Main frame<br>
 
-<div style='border: 1px solid black; padding: 5px;'>Click here</div>
-  
 <script>
 function log(x) {
   console.log(x);
   document.getElementById("log").innerText += x + "\n";
 }
-var div = document.querySelector('div');  
-div.addEventListener('click', function() {
+window.addEventListener('click', function() {
   document.getElementById("log").innerText += "Click\n";
 }, false);
 
-div.addEventListener('mousedown', function() {
+window.addEventListener('mousedown', function() {
   document.getElementById("log").innerText += "MouseDown\n";
 }, false);
 
-div.addEventListener('mouseup', function() {
+window.addEventListener('mouseup', function() {
   document.getElementById("log").innerText += "MouseUp\n";
 }, false);
   

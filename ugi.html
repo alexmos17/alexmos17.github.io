@@ -7,14 +7,14 @@ function log(x) {
   document.getElementById("log").innerText += x + "\n";
 }
 
-document.body.onclick = function() {
+window.onclick = function() {
   document.getElementById("log").innerText += "Click\n";
 }
-document.body.onmousedown = function() {
+window.onmousedown = function() {
   document.getElementById("log").innerText += "MouseDown\n";
   window.open("data:text/html,Popup from onmousedown");
 }
-document.body.onmouseup = function() {
+window.onmouseup = function() {
   document.getElementById("log").innerText += "MouseUp\n";
   window.open("data:text/html,Popup from onmouseup");
 }

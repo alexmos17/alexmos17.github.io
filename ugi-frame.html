@@ -18,6 +18,9 @@ window.onmouseup = function() {
   document.getElementById("log").innerText += "MouseUp\n";
   window.open("data:text/html,Frame popup from onmouseup","","width=200,height=100");
 }
+
+window.onmessage = (e) => { window.open("data:text/html,Frame popup from onmessage: " + e.data,"","width=200,height=100"); }
+
 </script>
 
 <p>Child frame</p>

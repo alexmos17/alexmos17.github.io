@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function log(x) {
+  console.log(x);
+  document.getElementById("log").innerText += x + "\n";
+}
+window.onclick = function() {
+  document.getElementById("log").innerText += "Click\n";
+}
+window.onmousedown = function() {
+  document.getElementById("log").innerText += "MouseDown\n";
+  var w = window.open("","","width=200,height=100");
+  w.document.body.innerText = "Frame popup from onmousedown";
+}
+window.onmouseup = function() {
+  document.getElementById("log").innerText += "MouseUp\n";
+  var w = window.open("","","width=200,height=100");
+  w.document.body.innerText = "Frame popup from onmouseup";
+}
+window.onmessage = (e) => { 
+  var w = window.open("","width=200,height=100"); 
+  w.document.body.innerText = "Frame popup from onmessage: " + e.data;
+}
+</script>
+
+<p>Child frame</p>
+
+<div id="log"></div>
+</body>
+</html>

@@ -21,7 +21,7 @@ window.onmouseup = function() {
   w.document.body.innerText = "Frame popup from onmouseup";
 }
 window.onmessage = (e) => { 
-  var w = window.open("","width=200,height=100"); 
+  var w = window.open("","","width=200,height=100"); 
   w.document.body.innerText = "Frame popup from onmessage: " + e.data;
 }
 </script>

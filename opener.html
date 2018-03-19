@@ -12,6 +12,10 @@ function navPopup(url) {
   w.location = url;
 }
 
+function nav(url) {
+  w.location = url;
+}
+
 function focusPopup() {
   w.focus();
 }
@@ -24,7 +28,8 @@ function focusPopup() {
 <button onclick="openPopup('', 'foo');">Get reference to popup</button>
 <button onclick="navPopup('http://csreis.github.io/');">Navigate popup cross-site</button>
 <button onclick="focusPopup();">Focus popup</button>
-
+<button onclick="openPopup('http://alexmos17.github.io/tests/frame.html');">Open BA popup</button>
+<button onclick="nav('http://alexmos17.github.io/tests/frame.html')">Navigate to BA</button>
 
 </body>
 </html>

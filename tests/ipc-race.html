@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<body>
+<script>
+function log(str) {
+  document.querySelector("log").innerHTML += str + "<br>";
+}
+
+function frameLoaded() {
+  log("frame element onload");  
+  setTimeout( () => { log("setTimeout scheduled from frame onload"); }, 1);
+}
+
+window.onmessage = (e) => { log("onmessage: " + e.data); };
+</script>
+
+IPC race test page.<br>
+<iframe src="https://alexmos17.github.io/tests/ipc-race-frame.html" onload="frameLoaded()"></iframe>
+<div id="log"></div>
+</body>
+</html>

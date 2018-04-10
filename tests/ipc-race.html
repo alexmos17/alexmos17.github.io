@@ -6,8 +6,6 @@ function log(str) {
   document.querySelector("#log").innerHTML += str + "<br>";
 }
 
-log("script start");
-
 setTimeout(() => { log("setTimeout scheduled from script start"); }, 0);
 
 function frameLoaded() {

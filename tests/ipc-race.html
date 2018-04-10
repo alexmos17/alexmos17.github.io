@@ -6,12 +6,19 @@ function log(str) {
   document.querySelector("#log").innerHTML += str + "<br>";
 }
 
+log("script start");
+
+setTimeout(() => { log("setTimeout scheduled from script start"); }, 0);
+
 function frameLoaded() {
   log("frame element onload");  
-  setTimeout( () => { log("setTimeout scheduled from frame onload"); }, 1);
+  setTimeout(() => { log("setTimeout scheduled from frame onload"); }, 0);
 }
 
 window.onmessage = (e) => { log("onmessage: " + e.data); };
+  
+window.onload => () => log("window.onload");
+
 </script>
 
 IPC race test page.<br>

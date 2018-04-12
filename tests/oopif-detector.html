@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+window.onload = function() {
+  var result = document.createElement("div");
+  var f = document.querySelector("iframe");
+  try { 
+    var d = f.contentDocument;
+    if (!d)
+      result.innerText = "Congratulations, strict site isolation is on!";
+  } catch(e) { 
+    result.innerText = "Sorry, strict site isolation is off.";
+  }
+  document.body.appendChild(result);
+}
+</script>
+<iframe src="https://alexmos17.github.io/tests/hello.html" width=0 height=0></iframe>
+</body>
+</html>

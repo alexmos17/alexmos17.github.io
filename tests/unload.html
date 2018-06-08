@@ -2,12 +2,13 @@
 <body>
 <script>
 function addUnloadImg() {
-window.addEventListener('unload', function () { 
-  var img = document.createElement("img"); 
-  img.src = document.getElementById("basepath").value + "foo.jpg"; 
-  document.body.appendChild(img); 
-});
-
+  window.addEventListener('unload', function () { 
+    var img = document.createElement("img"); 
+    img.src = document.getElementById("basepath").value + "foo.jpg"; 
+    document.body.appendChild(img); 
+  });
+}
+  
 </script>
 
 Default path for requests from unload: <input type='text' id='basepath' value="http://127.0.0.1/"><br>

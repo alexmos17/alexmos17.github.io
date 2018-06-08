@@ -4,7 +4,7 @@
 function addUnloadImg() {
 window.addEventListener('unload', function () { 
   var img = document.createElement("img"); 
-  img.src="http://127.0.0.1:8000/foo.jpg"; 
+  img.src = document.getElementById("basepath").value + "foo.jpg"; 
   document.body.appendChild(img); 
 });
 

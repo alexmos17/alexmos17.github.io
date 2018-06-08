@@ -48,8 +48,15 @@ Default path for requests from unload: <input type='text' id='basepath' value="h
 <button onclick="addUnloadBeacon()">Add unload (sendBeacon)</button>
 <button onclick="addUnloadConsoleLog()">Add unload (console.log)</button>
 <br clear=all>
-<!-- will become an OOPIF if main frame is loaded over HTTP -->
-<iframe src="https://alexmos17.github.io/tests/unload-frame.html"></iframe>
 
+<script>
+  window.onload = function () {
+    if (location.protocol == 'http:') {
+      var frame = document.createElement('iframe');
+      // will become an OOPIF
+      frame.src = location.href.replace('http', 'https');
+      document.body.appendChild(frame);
+    }
+  }
 </body>
 </html>

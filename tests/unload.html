@@ -36,7 +36,13 @@ function addUnloadConsoleLog() {
     console.log("Unload handler ran in " + location.href);
   });
 }
-    
+
+function addUnloadLoop() {
+  window.addEventListener('unload', function () { 
+    for (;;) ;
+  });
+}
+  
 </script>
 
 Default path for requests from unload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br>
@@ -47,6 +53,7 @@ Default path for requests from unload: <input type='text' id='basepath' value="h
 <button onclick="addUnloadXHR(true)">Add unload (async xhr)</button>
 <button onclick="addUnloadBeacon()">Add unload (sendBeacon)</button>
 <button onclick="addUnloadConsoleLog()">Add unload (console.log)</button>
+<button onclick="addUnloadLoop()">Add unload (infinite loop)</button>
 <br clear=all>
 
 <script>

@@ -20,14 +20,14 @@ function addUnloadScript() {
 function addUnloadXHR(async) {
   window.addEventListener('unload', function () { 
     var r = new XMLHttpRequest();
-    r.open('GET', 'http://127.0.0.1:8000/index.html', async);
+    r.open('GET', document.getElementById("basepath").value + '/xhr.html', async);
     r.send(null);
   });
 }
 
 function addUnloadBeacon() {
   window.addEventListener('unload', function () { 
-    navigator.sendBeacon("http://127.0.0.1:8000/foo", "bar");  
+    navigator.sendBeacon(document.getElementById("basepath").value + "/foo", "bar");  
   });
 }
 
@@ -45,7 +45,7 @@ function addUnloadLoop() {
   
 </script>
 
-Default path for requests from unload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br>
+Default path for requests from unload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br><br>
 
 <button onclick="addUnloadImg()">Add unload (img)</button>
 <button onclick="addUnloadScript()">Add unload (script)</button>
@@ -54,7 +54,7 @@ Default path for requests from unload: <input type='text' id='basepath' value="h
 <button onclick="addUnloadBeacon()">Add unload (sendBeacon)</button>
 <button onclick="addUnloadConsoleLog()">Add unload (console.log)</button>
 <button onclick="addUnloadLoop()">Add unload (infinite loop)</button>
-<br clear=all>
+<br clear=all><br>
 
 <script>
   window.onload = function () {

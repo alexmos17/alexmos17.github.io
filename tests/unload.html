@@ -9,6 +9,12 @@ function addUnloadImg() {
   });
 }
 
+function addUnloadBeacon() {
+  window.addEventListener('unload', function () { 
+    navigator.sendBeacon(document.getElementById("basepath").value + "/foo", "bar");  
+  });
+}
+
 function addUnloadScript() {
   window.addEventListener('unload', function () { 
     var script = document.createElement("script"); 
@@ -22,12 +28,6 @@ function addUnloadXHR(async) {
     var r = new XMLHttpRequest();
     r.open('GET', document.getElementById("basepath").value + '/xhr.html', async);
     r.send(null);
-  });
-}
-
-function addUnloadBeacon() {
-  window.addEventListener('unload', function () { 
-    navigator.sendBeacon(document.getElementById("basepath").value + "/foo", "bar");  
   });
 }
 
@@ -45,15 +45,15 @@ function addUnloadLoop() {
   
 </script>
 
-Default path for requests from unload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br><br>
-
-<button onclick="addUnloadImg()">Add unload (img)</button>
-<button onclick="addUnloadScript()">Add unload (script)</button>
-<button onclick="addUnloadXHR(false)">Add unload (sync xhr)</button>
-<button onclick="addUnloadXHR(true)">Add unload (async xhr)</button>
-<button onclick="addUnloadBeacon()">Add unload (sendBeacon)</button>
-<button onclick="addUnloadConsoleLog()">Add unload (console.log)</button>
-<button onclick="addUnloadLoop()">Add unload (infinite loop)</button>
+Default path for requests from unload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br>
+Add unload handlers: 
+<button onclick="addUnloadImg()">load img</button>
+<button onclick="addUnloadBeacon()">sendBeacon</button>
+<button onclick="addUnloadScript()">load script</button>
+<button onclick="addUnloadXHR(false)">sync xhr</button>
+<button onclick="addUnloadXHR(true)">async xhr</button>
+<button onclick="addUnloadConsoleLog()">console.log</button>
+<button onclick="addUnloadLoop()">infinite loop</button>
 <br clear=all><br>
 
 <script>

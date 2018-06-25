@@ -1,0 +1,30 @@
+<html>
+<body>
+<script>
+function addBeforeUnload() {
+  window.addEventListener('beforeunload', function (e) { 
+    navigator.sendBeacon(document.getElementById("basepath").value + "/foo", "bar");  
+    var dialogText = 'Foo';
+    e.returnValue = dialogText;
+    return dialogText;
+  });
+}
+  
+</script>
+
+Default path for requests from beforeunload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br><br>
+<button onclick="addBeforeUnload()">Add beforeunload</button>
+<br clear=all><br>
+
+<script>
+  window.onload = function () {
+    if (location.protocol == 'http:') {
+      var frame = document.createElement('iframe');
+      // will become an OOPIF
+      frame.src = location.href.replace('http', 'https');
+      document.body.appendChild(frame);
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,18 +1,26 @@
 <html>
 <body>
 <script>
-function addBeforeUnload() {
+function addBeforeUnload(show_dialog) {
   window.addEventListener('beforeunload', function (e) { 
     navigator.sendBeacon(document.getElementById("basepath").value + "/foo", "bar");  
-    var dialogText = 'Foo';
-    e.returnValue = dialogText;
-    return dialogText;
+    if (show_dialog) {
+      var dialogText = 'Foo';
+      e.returnValue = dialogText;
+      return dialogText;
+    }
   });
+}
+
+function navigateSelf() {
+  location = "https://csreis.github.io";
 }
 </script>
 
 Default path for requests from beforeunload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br><br>
-<button onclick="addBeforeUnload()">Add beforeunload</button>
+<button onclick="addBeforeUnload(true)">Add beforeunload (with dialog)</button>
+<button onclick="addBeforeUnload(false)">Add beforeunload (no dialog)</button>
+<button onclick="navigateSelf()">Navigate away</button>
 <br clear=all><br>
 
 <script>

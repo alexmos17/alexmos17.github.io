@@ -12,6 +12,12 @@ function addBeforeUnload(show_dialog) {
   });
 }
 
+function addBeforeUnloadSlow() {
+  var start = new Date().getTime();
+  var deltaInMs = 5000;
+  while (new Date().getTime() < (start + deltaInMs)) ;
+}
+                          
 function navigateSelf() {
   location = "https://csreis.github.io";
 }
@@ -20,6 +26,7 @@ function navigateSelf() {
 Default path for requests from beforeunload: <input type='text' id='basepath' value="http://127.0.0.1:8000/"><br><br>
 <button onclick="addBeforeUnload(true)">Add beforeunload (with dialog)</button>
 <button onclick="addBeforeUnload(false)">Add beforeunload (no dialog)</button>
+<button onclick="addBeforeUnloadSlow()">Add beforeunload (slow, no dialog)</button>
 <button onclick="navigateSelf()">Navigate away</button>
 <br clear=all><br>
 

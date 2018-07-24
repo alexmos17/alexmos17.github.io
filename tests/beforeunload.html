@@ -39,6 +39,13 @@ Default path for requests from beforeunload: <input type='text' id='basepath' va
       // will become an OOPIF
       frame.src = location.href.replace('http', 'https');
       document.body.appendChild(frame);
+      
+      var button = document.createElement('button');
+      button.innerText = "Add frame";
+      button.onclick = () => {
+        document.body.appendChild(document.createElement('iframe')).src = frame.src;
+      };
+      document.body.appendChild(button);
     }
   }
 </script>

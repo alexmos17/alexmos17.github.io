@@ -45,7 +45,8 @@ Default path for requests from beforeunload: <input type='text' id='basepath' va
       button.onclick = () => {
         document.body.appendChild(document.createElement('iframe')).src = frame.src;
       };
-      document.body.appendChild(button);
+
+      document.body.insertBefore(button, document.querySelector("button"));
     }
   }
 </script>

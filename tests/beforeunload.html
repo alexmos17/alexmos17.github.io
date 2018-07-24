@@ -13,9 +13,11 @@ function addBeforeUnload(show_dialog) {
 }
 
 function addBeforeUnloadSlow() {
-  var start = new Date().getTime();
-  var deltaInMs = 5000;
-  while (new Date().getTime() < (start + deltaInMs)) ;
+  window.addEventListener('beforeunload', function (e) { 
+    var start = new Date().getTime();
+    var deltaInMs = 5000;
+    while (new Date().getTime() < (start + deltaInMs)) ;
+  });
 }
                           
 function navigateSelf() {

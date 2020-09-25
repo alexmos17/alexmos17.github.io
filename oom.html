@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+window.foo[0] = '#'.repeat(1024*1024);
+window.i = 1;
+function allocate() {
+  window.foo[i] = window.foo[i-1] + window.foo[i-1];
+  i++;
+}
+
+</script>
+
+<button type="button" onclick="allocate()">Allocate</button>
+
+<iframe src="http://csreis.github.io"></iframe>
+
+<iframe src="http://alexmos17.github.io"></iframe>
+
+<iframe src="http://asdf.com/"></iframe>
+
+</body>
+</html>

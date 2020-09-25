@@ -5,8 +5,8 @@
 window.foo[0] = '#'.repeat(1024*1024);
 window.i = 1;
 function allocate() {
-  window.foo[i] = window.foo[i-1] + window.foo[i-1];
-  i++;
+  window.foo[window.i] = window.foo[window.i-1] + window.foo[window.i-1];
+  window.i++;
 }
 
 </script>

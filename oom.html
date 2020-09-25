@@ -2,10 +2,11 @@
 <html>
 <body>
 <script>
+window.foo = new Array();
 window.foo[0] = '#'.repeat(1024*1024);
 window.i = 1;
 function allocate() {
-  window.foo = window.foo.repeat(2); // foo[window.i-1] + window.foo[window.i-1];
+  window.foo[window.i] = window.foo[window.i-1].repeat(2);
   window.i++;
 }
 

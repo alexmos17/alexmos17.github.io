@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+window.foo = new Array();
+function allocate() {
+  for (var i=0; i < 10*1024*1024; i++)
+    foo.push(Math.random());
+}
+
+</script>
+
+<button type="button" onclick="allocate()">Allocate</button>
+
+<iframe src="https://alexmos17.github.io/oom.html" width=400 height=400></iframe>
+
+<iframe src="http://csreis.github.io" width=400 height=400></iframe>
+
+<iframe src="http://asdf.com/" width=400 height=400></iframe>
+
+</body>
+</html>

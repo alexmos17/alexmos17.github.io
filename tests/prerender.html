@@ -1,0 +1,18 @@
+<html>
+<head>
+<script type="speculationrules">
+{ prerender: [{ source: 'list', urls: ['hello.html'] }] }
+</script>
+</head>
+<body>
+  This <a href="hello.html">link</a> should get prerendered.
+
+  <div contentEditable=true>
+  Local frame: 
+  <iframe id="frame1" srcdoc="Local text"></iframe>
+  Remote frame: 
+  <iframe id="frame2" src="https://alexmos17.github.io/"></iframe>
+  Some trailing text.
+  </div>
+</body>
+</html>
